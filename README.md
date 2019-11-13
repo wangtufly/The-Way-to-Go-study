@@ -39,8 +39,21 @@ func main() {
    }
    ```
 #### 内建变量类型
-      
-
-  
+   * bool string
+   * (u)int int8 int16 int32 int64 uintptr
+      + 加u为无符号整数，不加则为有符号整数
+      + 规定长度与不规定长度，不规定程度的整数根据操作系统来定义长度
+      + uintptr 指针 长度根据操作系统
+   * byte rune
+      + rune GO语言的字符型，即char，长度为32位，byte 8位
+   * float32 float64 complex64 complex128
+      + complex 复数类型 1+i 
+        - 复数分为实部和虚部 【泰勒级数展开】   
+          ![泰勒级数展开](./images/complex.png)   
+          ![泰勒级数展开](./images/complex2.png)   
+          ![泰勒级数展开](./images/complex1.png)   
+#### 强制类型转换
+   * 类型的转换是强制的
+   * 
    
 

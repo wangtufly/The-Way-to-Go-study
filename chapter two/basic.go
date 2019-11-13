@@ -1,6 +1,10 @@
-package chapter_two
+package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+	"math/cmplx"
+)
 
 var aa = 3
 var ss = "KKK"
@@ -27,10 +31,27 @@ func variableShorter() {
 	a, b, c, s := 3, 4, true, "def"
 	fmt.Println(a, b, c, s)
 }
+
+//复数用例
+func euler() {
+	//fmt.Println(cmplx.Pow(math.E, 1i*math.Pi) + 1)
+	fmt.Println(cmplx.Exp(1i*math.Pi) + 1)
+}
+
+//强制类型转换
+func triangle() {
+	var a, b int = 3, 4
+	var c int
+	c = int(math.Sqrt(float64(a*a + b*b)))
+	fmt.Println(c)
+}
 func main() {
 	fmt.Println("Hello world")
 	variableZeroValue()
 	variableInitialValue()
 	variableTypeDeduction()
 	variableShorter()
+
+	euler()
+	triangle()
 }
