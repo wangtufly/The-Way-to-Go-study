@@ -9,7 +9,7 @@
    * vi,emacs,idea,eclipse,vs,sublime…… + go插件
    * IDE：Goland, LiteIDE
 ## Chapter two
-#### Go语言的基本语法
+### 1.Go语言的基本语法
 ```
 package main
 
@@ -19,7 +19,7 @@ func main() {
     fmt.Println("Hello World")
 }
 ```
-#### 变量的定义
+#### 1.1 变量的定义
    * 用var关键字定义
    * 变量的类型写在变量名之后
    * 变量可以定义在函数内部，或者直接定义在包内(函数外部)，定义在函数内时，var可以省略，用`:=`代替
@@ -38,7 +38,7 @@ func main() {
         fmt.Println(a, b, c, d, s)
    }
    ```
-#### 内建变量类型
+#### 1.2 内建变量类型
    * bool string
    * (u)int int8 int16 int32 int64 uintptr
       + 加u为无符号整数，不加则为有符号整数
@@ -52,8 +52,31 @@ func main() {
           ![泰勒级数展开](./images/complex.png)   
           ![泰勒级数展开](./images/complex2.png)   
           ![泰勒级数展开](./images/complex1.png)   
-#### 强制类型转换
+#### 1.3 强制类型转换
    * 类型的转换是强制的
-   * 
-   
+#### 1.4 常量的定义
+   * const数值不规定类型则可以作为各种类型使用
+   * 普通枚举类型`enums`
+   * 自增值枚举类型`iota`
+
+> #### 变量定义的要点
+> + 变量类型写在变量名之后
+> + 编译器可以推测变量类型
+> + 没有char，只有rune
+> + 原生支持复数类型
+### 2. 条件查询
+#### 2.1 if
+```
+if contents, err != ioutil.ReadFile(filename);err == nil{
+        fmt.Println(string(contents))
+}else{
+    fmt.Println("cannot print file contents:",err)
+}
+```
+* if的条件里可以赋值
+* if的条件里赋值的变量作用域就在这个if的语句里
+#### 2.2 switch
+* switch会自动break，除非使用fallthrough
+* switch后可以没有表达式
+
 
