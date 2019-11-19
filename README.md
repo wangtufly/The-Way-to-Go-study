@@ -78,5 +78,27 @@ if contents, err != ioutil.ReadFile(filename);err == nil{
 #### 2.2 switch
 * switch会自动break，除非使用fallthrough
 * switch后可以没有表达式
+### 3. 循环
+* for的条件不需要括号
+* for的条件可以省略初始条件，结束条件，递增表达式
+* 省略初始条件相当于while
+* 全省略是死循环
+
+>* for if 后面的条件没有括号
+>* if条件里也可以定义变量
+>* 没有while
+>* switch不需要break，也可以直接switch多个条件
+### 4. 函数
+* func eval(a,b int, op string) int
+* 函数可返回多个值
+* 返回的多个值可以起名字
+* 仅用于非常简单的函数
+* 对于调用者而言没有区别
+* 返回值类型写在最后面
+* 函数可以作为参数
+* 没有默认参数，可选参数
+### 5.指针
+
+
 
 
