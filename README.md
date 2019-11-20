@@ -98,7 +98,49 @@ if contents, err != ioutil.ReadFile(filename);err == nil{
 * 函数可以作为参数
 * 没有默认参数，可选参数
 ### 5.指针
+* 指针不能运算
+* Go语言只有值传递一种方式
+## chapter three
+### 1. 数组，切片和容器
+#### 1.1 数组
+*  `arr [len]int`/`arr:=[len]int{}`/`arr:=[...]int{}`
+* 数组的遍历--range关键字:
+  ```
+  sum:=0
+  for _,v := range numbers{
+  }
+  ```
+    + 可通过`_`省略变量
+    + 不仅range，任何地方都可以用`_`省略变量
+    + 如果只要i,可以写成`for i:=range numbers`
+   >为什么要用range
+   >    - 意义明确，美观
+   >    - c++: 没有类似能力
+   >    - java/python: 只能for each value,不能同时获取i，v
 
-
+* 数组是值类型
+   + `[10]int`和`[20]int`是不同类型
+   + 调用`func f(arr [10]int)`会拷贝数组
+   + 在go语言中一般不直接使用数组
+#### 1.2 切片slice
+```
+arr:=[...]int{0,1,2,3,4,5,6,7}
+s:=arr[2:6]
+s[0]=10
+```
+* s的值为`[2 3 4 5]`
+* slice 本事没有数据，是对底层array的一个view
+* arr的值变为`[0 1 10 3 4 5 6 7]`
+* slice的扩展
+```
+arr:=[...]int{0,1,2,3,4,5,6,7}
+s1:=arr[2:6]
+s2:=s1[3:5]
+```
+结果是`s1=[2,3,4,5]，s2=[5,6]`
+> slice的实现
+> + slice 的结构中含有 ptr，len，cap三个参数
+> + slice可以向后扩展，不能向前扩展。
+> + `s[i]`不可超越len(s)，向后扩展不可以超越底层数组cap(s)
 
 
