@@ -164,13 +164,12 @@ m:= map[string]string{
    + key不存在时，获得Value类型的初始值
    + 用 `value,ok:=m[key]`来判断是否存在key
    + delete删除一个key
-* map的遍历√
+* map的遍历
    + 使用range 遍历key 或者遍历key value对
    + 不保证遍历顺序，如需顺序，需要手动对key排序
-   + 使用len获取元素个数
+   + 使用len获取元素 个数
 * map的key
    + map使用哈希表，必须可以比较相等
    + 除了slice，map，function的内建类型都可以作为key
    + struct类型不包含上述字段，也可以做key
 * 例：寻找最长不含有重复字符的子串
-√
