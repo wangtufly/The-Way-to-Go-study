@@ -8,6 +8,11 @@ import (
 
 var aa = 3
 var ss = "KKK"
+var (
+	variblesx  int
+	slicex     []int
+	interfacex interface{}
+)
 
 func variableZeroValue() {
 	var a int
@@ -18,6 +23,7 @@ func variableZeroValue() {
 func variableInitialValue() {
 	var a, b int = 3, 4
 	var s string = "abc"
+	a, b = b, a
 	fmt.Println(a, b, s)
 }
 
