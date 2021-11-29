@@ -72,7 +72,7 @@ if contents, err != ioutil.ReadFile(filename);err == nil{
 ### 3. 循环
 * for的条件不需要括号
 * for的条件可以省略初始条件，结束条件，递增表达式
-* 省略初始条件相当于while
+* 省略初始条件，递增条件相当于while
 * 全省略是死循环
 
 >* for if 后面的条件没有括号
