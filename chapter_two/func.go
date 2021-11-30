@@ -52,6 +52,7 @@ func sum(numbers ...int) int {
 }
 
 func swap(a, b int) (int, int) {
+	//*b,*a = *a,*b
 	return b, a
 }
 func main() {
