@@ -25,9 +25,9 @@ func main() {
 	fmt.Println(arr)
 
 	s2 = s2[:5]
-	fmt.Println(s2)
+	fmt.Println("s2的切片", s2)
 	s2 = s2[2:]
-	fmt.Println(s2)
+	fmt.Println("s2切片的切片", s2)
 
 	fmt.Println("extending slice")
 	arr[0], arr[3] = 0, 3
@@ -37,10 +37,11 @@ func main() {
 	fmt.Println("s2=", s2)
 	fmt.Println(s1, len(s1), cap(s1))
 	fmt.Println(s2, len(s2), cap(s2))
+	//fmt.Println(s1[3:8])//slice bounds out of range [:8] with capacity 6
 
-	s3 := append(s2, 10)
-	s4 := append(s3, 11)
-	s5 := append(s4, 12)
+	s3 := append(s2, 11)
+	s4 := append(s3, 12)
+	s5 := append(s4, 13)
 	fmt.Println("s3,s4,s5", s3, s4, s5)
 	fmt.Println("arr=", arr)
 }
