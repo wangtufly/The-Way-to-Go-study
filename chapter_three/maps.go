@@ -33,6 +33,5 @@ func main() {
 	fmt.Println(name, ok)
 	delete(m, "name")
 	name, ok = m["name"]
-
 	fmt.Println(name, ok)
 }

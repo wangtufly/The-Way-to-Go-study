@@ -7,7 +7,7 @@
 #### 1.1 数组
 
 * `arr [len]int`/`arr:=[len]int{}`/`arr:=[...]int{}`
-* `arr [num][len]int`
+* `arr [num][len]int` 矩阵数组
 * 数量写在类型前面
 * 数组的遍历--range关键字:
   ```
