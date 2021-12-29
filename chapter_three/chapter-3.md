@@ -88,3 +88,16 @@ m:= map[string]string{
     + 除了slice，map，function的内建类型都可以作为key
     + struct类型不包含上述字段，也可以做key
 * 例：寻找最长不含有重复字符的子串
+
+### 1.4 rune
+
+* rune相当于go的char
+    + 使用range遍历pos,rune对（i 英文连续 中文+3）
+    + 使用utf.RuneCountInString获得字符数量
+    + 使用len获得字节长度
+    + 使用[]byte获得字节
+* 其他字符串操作
+    + Fields,Split,join
+    + Contains,index
+    + ToLower,ToUpper
+    + Trim,TrimRight,TrimLeft
