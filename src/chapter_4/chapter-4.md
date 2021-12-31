@@ -58,3 +58,24 @@ func (node *treeNode) setValue(value int) {
 * 值接收者是GO特有
 * 值/指针接收者均可接收值/指针
 
+#### 封装
+
+* 名字一般使用CamelCase 大驼峰
+* 首字母大写 public 针对包
+* 首字母小写 private 针对包
+
+#### 包
+
+* 每个目录一个包
+* main包包含可执行入口
+* 为结构定义的方法必须放在同一个包内
+* 可以是不同的文件
+> 如何过充系统类型或者别人的类型
+> 定义别名
+> 使用组合
+
+#### GOPATH 下目录结构
+* go build 来编译
+* go install 产生pkg文件和可执行文件
+* go run 直接编译运行
+

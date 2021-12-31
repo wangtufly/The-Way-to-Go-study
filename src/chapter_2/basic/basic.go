@@ -6,13 +6,13 @@ import (
 	"math/cmplx"
 )
 
-var aa = 3
-var ss = "KKK"
-var (
-	variblesx  int
-	slicex     []int
-	interfacex interface{}
-)
+//var aa = 3
+//var ss = "KKK"
+//var (
+//	variblesx  int
+//	slicex     []int
+//	interfacex interface{}
+//)
 
 func variableZeroValue() {
 	var a int
@@ -28,14 +28,14 @@ func variableInitialValue() {
 }
 
 func variableTypeDeduction() {
-	var a, b, c, s = 3, 4, true, "def"
-	fmt.Println(a, b, c, s)
+	var a, b, _, s = 3, 4, true, "def"
+	fmt.Println(a, b, true, s)
 }
 
 func variableShorter() {
 	//第一次使用变量可以使用冒号定义，但在函数外部定义只能使用var
-	a, b, c, s := 3, 4, true, "def"
-	fmt.Println(a, b, c, s)
+	a, b, _, s := 3, 4, true, "def"
+	fmt.Println(a, b, true, s)
 }
 
 //复数用例
@@ -67,7 +67,6 @@ func enums() {
 	const (
 		cpp = iota
 		_
-		java
 		python
 		golang
 		javascript
