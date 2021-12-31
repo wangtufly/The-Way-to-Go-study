@@ -20,9 +20,9 @@ func main() {
 	//	fmt.Println(arr3[i])
 	//}
 
-	//for _, v := range arr3 {
-	//	fmt.Println(v)
-	//}
+	for _, v := range arr3 {
+		fmt.Println(v)
+	}
 	printArray(arr1)
 	printArray(arr3)
 	fmt.Println(arr1, arr3)
