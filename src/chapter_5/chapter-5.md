@@ -23,3 +23,14 @@
 * 表示任何类型：interface{}
 * Type Assertion
 * Type Switch
+
+#### 接口组合
+```
+type ReadWriter interface
+{
+  Reader
+  Writer
+}
+```
+
+
