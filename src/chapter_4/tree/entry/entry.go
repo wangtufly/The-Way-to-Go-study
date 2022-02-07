@@ -1,8 +1,7 @@
 package main
 
 import (
-	"../../tree"
-	"fmt"
+	"chapter_4/tree"
 )
 
 type myTreeNode struct {
@@ -27,22 +26,22 @@ func main() {
 	root.Right = &tree.Node{Value: 5}
 	root.Right.Left = new(tree.Node)
 	root.Left.Right = tree.CreateNode(2)
+	//
+	//nodes := []tree.Node{
+	//	{Value: 3},
+	//	{},
+	//	{6, nil, &root},
+	//}
+	//fmt.Println(nodes)
 
-	nodes := []tree.Node{
-		{Value: 3},
-		{},
-		{6, nil, &root},
-	}
-	fmt.Println(nodes)
-
-	root.Print()
-	root.Right.Left.SetValue(4)
-	root.Right.Left.Print()
-	fmt.Println()
+	//root.Print()
+	//root.Right.Left.SetValue(4)
+	//root.Right.Left.Print()
+	//fmt.Println()
 
 	root.Traverse()
-	fmt.Println()
-	myRoot := myTreeNode{&root}
-	myRoot.postOrder()
-	fmt.Println()
+	//fmt.Println()
+	//myRoot := myTreeNode{&root}
+	//myRoot.postOrder()
+	//fmt.Println()
 }
