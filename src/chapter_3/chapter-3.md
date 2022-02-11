@@ -79,6 +79,7 @@ m:= map[string]string{
     + key不存在时，获得Value类型的初始值
     + 用 `value,ok:=m[key]`来判断是否存在key
     + delete删除一个key
+    + map不用手动清空，会自动回收，所以需要一般直接写新map
 * map的遍历
     + 使用range 遍历key 或者遍历key value对
     + 不保证遍历顺序，如需顺序，需要手动对key排序
@@ -88,6 +89,15 @@ m:= map[string]string{
     + 除了slice，map，function的内建类型都可以作为key
     + struct类型不包含上述字段，也可以做key
 * 例：寻找最长不含有重复字符的子串
+* 基于map的多键值索引，可以提高查询效率
+* map在并发的情况下，只读线程安全，同时读写线程不安全
+    + 并发读写，map内部会对此进行检查并提前发现
+    + 需要并发读写时，一般做法是加锁，但效率不高，go在>=1.9中提供了高效并发安全的sync.Map,但不是以语言原生形态提供，而是在sync包下的特殊结构
+* sync.Map
+    + 无须初始化，直接声明即可
+    + sync.Map不能使用map的方式进行取值和设置操作，而是使用sync.Map的方法进行调用，Store表示存储，Load表示获取，Delete表示删除
+    + 使用Range配合一个回调函数进行遍历操作，通过回调函数返回内部遍历出来的值，range参数中回调函数的返回值在需要继续迭代遍历时，返回true，终止迭代遍历时，返回false
+    + sync.Map没有提供获取map数量的方法，且有一定性能损失，在非并发的情况下，使用map更高效
 
 ### 1.4 rune
 
@@ -101,3 +111,9 @@ m:= map[string]string{
     + Contains,index
     + ToLower,ToUpper
     + Trim,TrimRight,TrimLeft
+
+### 1.5 list
+* 单链表，双链表
+* 列表使用container/list包来实现，内部实现原理是双链表
+* list 的初始化分别是New()函数和var关键字声明，两种方法效果一致
+* 列表与切片和map不同的是，列表并没有具体的元素类型限制
